@@ -97,8 +97,8 @@ class _EditingNotePageState extends State<EditingNotePage> {
                 color: Colors.white,
                 child: FlutterQuillLocalizationsWidget(
                   child: QuillToolbar.simple(
-                    configurations: QuillSimpleToolbarConfigurations(
-                      controller: _controller,
+                    controller: _controller,
+                    configurations: const QuillSimpleToolbarConfigurations(
                       showAlignmentButtons: false,
                       showBoldButton: false,
                       showCodeBlock: false,
@@ -131,7 +131,7 @@ class _EditingNotePageState extends State<EditingNotePage> {
                       showClipboardCopy: false,
                       showClipboardPaste: false,
                       showClipboardCut: false,
-                      sharedConfigurations: const QuillSharedConfigurations(
+                      sharedConfigurations: QuillSharedConfigurations(
                         locale: Locale('sl'),
                       ),
                     ),
@@ -147,13 +147,13 @@ class _EditingNotePageState extends State<EditingNotePage> {
                   // ignore: avoid_unnecessary_containers
                   child: Container(
                     child: QuillEditor.basic(
-                        configurations: QuillEditorConfigurations(
-                      controller: _controller,
-                      sharedConfigurations: const QuillSharedConfigurations(
-                        locale: Locale('sl'),
-                      ),
-                      placeholder: "Naslov",
-                    )),
+                        controller: _controller,
+                        configurations: const QuillEditorConfigurations(
+                          sharedConfigurations: QuillSharedConfigurations(
+                            locale: Locale('sl'),
+                          ),
+                          placeholder: "Naslov",
+                        )),
                   ),
                 ),
               )
